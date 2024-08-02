@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "38711bbe-0e5c-426a-b777-090fd9e9792b",
+		"name": "quizApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16567643",
+		"_collection_link": "https://www.postman.com/dark-equinox-675774/workspace/contact-db-api-collection/collection/16567643-38711bbe-0e5c-426a-b777-090fd9e9792b?action=share&source=collection_link&creator=16567643"
+	},
+	"item": [
+		{
+			"name": "quiz/create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "6276598d-fe36-4856-b7b9-6cde80e4a289",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/quiz/create?categoryName=Java&numQuestion=3&title=Second",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"quiz",
+						"create"
+					],
+					"query": [
+						{
+							"key": "categoryName",
+							"value": "Java"
+						},
+						{
+							"key": "numQuestion",
+							"value": "3"
+						},
+						{
+							"key": "title",
+							"value": "Second"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz/get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/quiz/get/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"quiz",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz/submit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 7,\r\n        \"response\": \"int\"\r\n    },\r\n    {\r\n        \"id\": 8,\r\n        \"response\": \"java.util package\"\r\n    },\r\n    {\r\n        \"id\": 5,\r\n        \"response\": \"0\"\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/quiz/submit/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"quiz",
+						"submit",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
